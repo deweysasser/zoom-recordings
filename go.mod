@@ -1,4 +1,4 @@
-module github.com/deweysasser/golang-program
+module github.com/deweysasser/zoom-recordings
 
 go 1.26.0
 

@@ -1,10 +1,18 @@
-# golang-program
+# zoom-recordings
 
-A base for utility software written in golang
+A CLI for manipulating zoom recordings
 
 ## Overview
 
-This is a template project.  You (or I) can use it when starting a simple golang program so we can
-just immediately start coding interesting things instead of remembering the boiler-plate.
+This is a user program for using the Zoom API to download recordings of meetings.
 
-See [[README-TEMPLATE.md]] for more information about how to use this template project.
+## Usage
+
+- download a single recording
+- download all recordings for a user
+- download all recordings for a user in a date range
+- download all recordings for a user in a date range, filtered by meeting topic
+
+By default, the date range is the last 24 hours.
+
+It is idempotent, so can be run multiple times and will only download recordings not already present in the directory.
