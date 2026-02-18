@@ -17,7 +17,7 @@ import (
 type DownloadCmd struct {
 	From      string `help:"Start date (YYYY-MM-DD). Defaults to 24 hours ago." short:"f"`
 	To        string `help:"End date (YYYY-MM-DD). Defaults to today." short:"t"`
-	OutputDir string `help:"Directory to save recordings to." default:"./recordings" short:"o"`
+	OutputDir string `help:"Directory to save recordings to." default:"." short:"o"`
 }
 
 // Run executes the download command.

@@ -58,7 +58,7 @@ zoom-recordings list --from 2026-01-01 --to 2026-02-01
 ### Download recordings
 
 ```sh
-# Download to ./recordings (default)
+# Download to current directory (default)
 zoom-recordings download
 
 # Download to a specific directory with a date range
