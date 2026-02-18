@@ -17,11 +17,18 @@ var exitFunc = os.Exit
 // Options is the structure of program options
 type Options struct {
 	Version bool `help:"Show program version"`
-	// VersionCmd VersionCmd `name:"version" cmd:"" help:"show program version"`
 
 	Debug        bool   `group:"Info" help:"Show debugging information"`
 	OutputFormat string `group:"Info" enum:"auto,jsonl,terminal" default:"auto" help:"How to show program output (auto|terminal|jsonl)"`
 	Quiet        bool   `group:"Info" help:"Be less verbose than usual"`
+
+	ClientID     string `group:"OAuth" help:"Zoom OAuth client ID" env:"ZOOM_CLIENT_ID" required:""`
+	ClientSecret string `group:"OAuth" help:"Zoom OAuth client secret" env:"ZOOM_CLIENT_SECRET" required:""`
+	CallbackPort int    `group:"OAuth" help:"Local port for OAuth callback" env:"ZOOM_CALLBACK_PORT" default:"8085"`
+
+	Login    LoginCmd    `cmd:"" help:"Authenticate with Zoom via OAuth"`
+	List     ListCmd     `cmd:"" help:"List available recordings"`
+	Download DownloadCmd `cmd:"" help:"Download recordings"`
 }
 
 // Parse calls the CLI parsing routines
@@ -37,12 +44,6 @@ func (program *Options) Parse(args []string) (*kong.Context, error) {
 	}
 
 	return parser.Parse(args)
-}
-
-// Run runs the program.  Note that you can specify any argument types as long as they're bound.
-// Useful arguments might be context.Context, log.Logger, Options
-func (program *Options) Run() error {
-	return nil
 }
 
 // AfterApply runs after the options are parsed but before anything runs
