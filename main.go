@@ -30,7 +30,7 @@ func main() {
 	kongContext.Bind(log.Logger)
 
 	// And just in case anyone needs access to the full program options, bind those too
-	kongContext.Bind(options)
+	kongContext.Bind(&options)
 
 	// This ends up calling options.Run()
 	if err := kongContext.Run(&options); err != nil {
