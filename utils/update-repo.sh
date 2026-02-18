@@ -3,8 +3,6 @@
 # Rename this project from the template defaults to a new module path.
 #
 # Usage:
-#   ./utils/rename-project.sh                          # auto-detect from git origin
-#   ./utils/rename-project.sh github.com/user/myapp    # explicit module path
 #
 set -euo pipefail
 
