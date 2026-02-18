@@ -69,6 +69,10 @@ Downloaded files are named `{date}_{topic}_{recording-type}.{ext}`, e.g. `2026-0
 
 Downloads are idempotent — files that already exist with the correct size are skipped.
 
+## Claude Code Integration
+
+This project includes a [Claude Code skill](SKILL.md) that teaches Claude how to use the `zoom-recordings` CLI. When working in this repository with Claude Code, it can guide you through authentication, listing, and downloading recordings.
+
 ## Building
 
 ```sh
